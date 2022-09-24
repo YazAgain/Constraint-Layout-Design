@@ -118,5 +118,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/bt_signup" />
 
+    <EditText
+        android:id="@+id/tx_OTP"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:hint="OTP"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_linkedin" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

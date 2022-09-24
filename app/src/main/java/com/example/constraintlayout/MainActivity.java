@@ -2,6 +2,7 @@ package com.example.constraintlayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -14,10 +15,12 @@ public class MainActivity extends AppCompatActivity {
 
     String userName="Hem";
     String password="TenTen";
+    String otp1 = "123456789";
 
     Button login;
-    EditText user,pass;
+    EditText user,pass,otp;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         user=findViewById(R.id.ed_enterEmailAddress);
         pass=findViewById(R.id.ed_enterPassword);
         login=findViewById(R.id.bt_signup);
+        otp=findViewById(R.id.tx_OTP);
     }
 
     @Override
@@ -36,8 +40,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String usr = user.getText().toString();
                 String pw=pass.getText().toString();
+                String op=otp.getText().toString();
+                boolean ju=otp.equals(otp1);
 
-                if (usr.equals(userName) && pw.equals(password)){
+                if (usr.equals(userName) && pw.equals(password) && op.equals(otp1)){
                     Intent go = new Intent(MainActivity.this,Welcome.class);
                     startActivity(go);
                 }else {
